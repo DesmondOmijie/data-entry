@@ -1,0 +1,986 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.4%;
+	scroll-behavior: smooth;
+	font-family: sans-serif;
+}
+
+html h1, h2, h3, h4{
+	font-family: 'poppins';
+}
+
+html p, a, button, input{
+	font-family: 'inter';
+}
+
+
+:root {
+	--main-BG:#F3F4F6;
+	--cards:#ffffff;
+	--btn-color1:#22c55e;
+	--btn-color2:#047857;
+	--btn-hover1:#16a34a;
+	--btn-hover2:#065f46;
+	--text-color:#1f2937;
+    --mild-black:#374151;
+	--borders:#e5e7eb;
+	--accent-color:#fb923c;
+	--gradient-color:#eaf2ff;
+}
+
+
+/*animated text reveal..*/
+
+main .reveal {
+
+	opacity: 0;
+	transform: translateY(40px);
+	transition: all 1.5s ease;
+	will-change: transform, opacity;
+}
+
+.reveal.active{
+	opacity: 1;
+	transform: translateY(0);
+}
+
+header{
+	position: fixed;
+	width: 100vw;
+	z-index: 1;
+}
+
+header article{
+	padding: 1rem;
+	display: flex;
+	justify-content: space-around;
+	background: var(--text-color);
+	color: var(--cards);
+	box-shadow: 0 6px 18px rgba(31, 41, 55, 0.12);
+	border-radius: 0.1rem;
+}
+
+header article .logos{
+	display: flex;
+	gap: 2rem;
+}
+
+header article .logos img{
+	width: 3rem;
+	height: 3rem;
+  border-radius: 4rem;  
+}
+
+header article .logos .logo-text{
+  font-size: 1.5rem;
+}
+
+header article .logos .logo-text span{
+  font-size: 1rem;
+}
+
+header article nav{
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
+	align-items: center;
+}
+
+header article nav a{
+	padding: 0.3rem;
+  text-decoration: none;
+  color:var(--cards) ;
+  font-size: 1.5rem;
+  transition:  0.5s ease-in;
+}
+
+header article nav a:hover{
+	color: var(--btn-color1);
+	border-bottom: 0.02rem var(--btn-color1) solid;
+	transform: translateX(-15px);
+}
+
+header article .head-btn {
+  padding: 1rem;	
+
+}
+
+ header article .head-btn a{
+	background:linear-gradient(to top, 
+	 var(--btn-color2),
+	 var(--btn-color1));
+	color:var(--cards);
+	padding: 1.2rem;
+	font-size: 1.6rem;
+	border-radius: 1.2rem;
+	text-decoration: none;
+	transition: 0.5s ease-in;
+}
+
+ header article .head-btn a:hover{
+	background:linear-gradient(to right, 
+	 var(--btn-hover1),
+	 var(--btn-color2));
+	transform: translateX(-5px);
+	font-size: 1.5rem;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(59, 130, 246, 0.25);
+
+	/*border: 0.01rem #c4b5fd solid;*/
+
+}
+
+header .menu{
+	display: none;
+}
+
+/*hero section code...*/
+
+main .hero{
+	padding: 8rem;
+	background: linear-gradient(to left,
+		var(--main-BG),
+		var(--gradient-color));
+
+	display: flex;
+	justify-content: space-around;
+}
+
+main .hero .container .texts h3{
+	color: var(--btn-color1);
+	padding: 1rem;
+}
+
+main .hero .container .texts h1{
+	font-size: 3rem;
+	padding: 1rem;
+}
+
+main .hero .container .texts p{
+	color: var(--mild-black);
+	font-size: 2rem;
+	padding: 0.5rem;
+}
+
+main .hero .container .buttons{
+	display: flex;
+	gap: 3rem;
+	padding: 1rem;
+}
+
+main .hero .container .buttons .btn1{
+	text-decoration: none;
+	background:linear-gradient(to left, 
+	 var(--btn-color1),
+	 var(--btn-color2));
+	color:var(--cards);
+	padding: 1.3rem;
+	font-size: 1.4rem;
+	border-radius: 2rem;
+	text-decoration: none;
+	transition: 0.5s ease-in;
+}
+
+main .hero .container .buttons .btn2{
+	color: var(--btn-color2);
+	text-decoration: none;
+	background:var(--cards);
+	padding: 1.3rem;
+	font-size: 1.4rem;
+	border: 0.01rem var(--btn-color1) solid;
+	border-radius: 2rem;
+	text-decoration: none;
+	transition: 0.5s ease-in;
+}
+
+main .hero .container .buttons .btn1:hover{
+	font-size: 1.2rem;
+	background:linear-gradient(to top, 
+	 var(--btn-color1),
+	 var(--btn-color2));
+}
+
+main .hero .container .buttons .btn2:hover{
+	font-size: 1.2rem;
+	background:linear-gradient(to left, 
+	 var(--btn-color1),
+	 var(--cards));
+	color: var(--mild-black);
+}
+
+main .hero .container .list{
+	display: flex;
+	padding: 1rem;
+	gap: 1rem;
+}
+
+main .hero .container .list span{
+	 height: 4rem;
+	 width: 0.01rem;
+	 background: var(--mild-black);
+}
+
+main .hero .container .list > div{
+	padding: 0.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+main .hero .container .list > div i{
+	font-size: 2.5rem;
+	color: var(--mild-black);
+
+}
+
+main .hero .container .list > div p{
+	font-size: 1.4rem;
+	text-align: center;
+}
+
+main .hero .image img{
+	width: 60rem;
+	height:39rem;
+	border-radius: 3rem;
+}
+
+
+/*style for about me, skills and services offered....*/
+
+main .lists{
+	display: flex;
+	justify-content: space-around;
+	padding: 2rem;
+	align-items: center;
+}
+
+main .lists img{
+	width: 30rem;
+	height: 29.5rem;
+	padding: 1rem;
+	box-shadow: 0 4px 20px rgba(31, 41, 55, 0.08);
+	border-radius: 2.8rem;
+}
+
+main .lists .mobile{
+	display: none;
+}
+
+main .lists span{
+	height: 32rem;
+	width: 0.1rem;
+	background: var(--mild-black);
+}
+
+main .lists h2{
+	padding: 1.4rem;
+	font-size: 2rem;
+}
+
+main .lists h3{
+	font-size: 1.4rem;
+}
+
+main .lists .about p{
+	color: var(--mild-black);
+	font-size: 1.6rem;
+	padding: 0.5rem;
+}
+
+main .lists .skills ul li{
+  list-style: none;
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+
+main .lists .skills ul li span{
+	color: var(--btn-color1);
+	background: none;
+	font-size: 1.8rem;
+}
+
+main .lists .services > div{
+	display: flex;
+	gap: 1.2rem;
+	padding: 1rem;
+}
+
+main .lists .services i {
+	font-size: 2rem;
+	color: var(--btn-hover1);
+}
+
+main .lists .services h3{
+  font-size: 1.4rem;
+}
+
+main .lists .services p{
+  font-size: 1.5rem;
+  color: var(--mild-black);
+}
+
+
+/*the styles for the portfolio section....*/
+
+main .portfolio{
+	background: var(--main-BG);
+	padding: 2rem;
+}
+
+main .portfolio .top{
+	padding: 2rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+main .portfolio .top .text h2{
+	padding: 1rem;
+	color: var(--btn-color1);
+	font-size: 1.2rem;
+}
+
+main .portfolio .top .text p{
+	font-size: 1.5rem;
+	padding: 1rem;
+	color: var(--text-color);
+}
+
+main .portfolio .top .buttons input{
+	padding: 1rem;
+	border-radius: 1.9rem;
+	border:0.01rem solid;
+	color: var(--btn-color1);
+	background: var(--main-BG);
+}
+
+main .portfolio .images > div{
+	place-self: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows:1fr 1fr;
+	/*flex-wrap: wrap;*/
+	/*justify-content: center;*/
+	gap: 5rem;
+	padding: 0.3rem;
+}
+
+main .portfolio .images figure{
+	padding:2.2rem;
+	background:white;
+	border-radius: 2rem;
+	width: 57rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 4px 20px rgba(31, 41, 55, 0.08);
+}
+
+main .portfolio .images figure h2{
+	color: var(--btn-color1);
+	text-align: center;
+	padding: 1rem;
+	font-size: 2.2rem ;
+}
+
+main .portfolio .images figure p {
+	color: var(--text-color);
+	text-align: center;
+	padding: 0.8rem;
+	font-size: 1.5rem;
+}
+
+main .portfolio .images figure img{
+	width: 52rem;
+	height:35rem;
+	border-radius: 2rem;
+	box-shadow: 0 6px 16px rgba(31, 41, 55, 0.12);
+}
+
+
+main .portfolio .images figure a{
+	margin: 2rem;
+	padding: 1.5rem;
+	border-radius: 2rem;
+	text-decoration: none;
+	background: linear-gradient(to left,
+	var(--btn-color1),
+	 var(--btn-color2));
+	color: var(--cards);
+	font-size:1.4rem ;
+
+}
+
+main .portfolio .images figure a:hover{
+	font-size:1.3rem ;
+	transition:  0.5s ease-in;
+	background: linear-gradient(to top,
+	var(--btn-color1),
+	 var(--btn-color2));
+	/*transform: translateX(-15px);*/
+}
+
+/*hide projects that don't match...*/
+   
+   main .portfolio .images figure.hidden{
+   	display: none;
+   }
+
+   /*highlight the currently selected category...*/
+
+   main .portfolio .buttons input.active{
+   	background: var(--btn-color1);
+   	color: white;
+   	border-color: var(btn-color1);
+   	cursor: pointer;
+   }
+
+/*styles for the tools section....*/
+
+main .tools{
+	padding: 2rem;
+	display: flex;
+	justify-content: space-around;
+}
+
+main .tools span{
+	height: 23rem;
+	width: 0.01rem;
+	background: var(--mild-black);
+}
+
+main .tools .tool{
+	padding: 1.5rem;
+}
+
+main .tools .tool h2{
+	font-size: 2rem;
+	padding: 0.5rem;
+}
+
+main .tools .tool p{
+	color: var(--mild-black);
+	font-size: 1.4rem;
+	padding: 0.5rem;
+}
+
+main .tools .tool > div{
+	display: flex;
+	margin-top: 8rem;
+
+}
+
+main .tools .tool > div figure img{
+	width: 9rem;
+	height: 6rem;
+ padding: 0.5rem;
+ box-shadow: 0 6px 16px rgba(31, 41, 55, 0.12);
+
+}
+
+main .tools .tool > div figure figcaption{
+	text-align: center;
+	color: var(--text-color);
+	font-size: 1.3rem;
+	padding: 0.6rem;
+}
+
+main .tools .process .h2{
+	padding: 1rem;
+	font-size: 2rem;
+}
+
+main .tools .process .p{
+	font-size: 1.4rem;
+	color: var(--mild-black);
+	padding: 0.5rem;
+}
+
+main .tools .process .container{
+	padding: 1.3rem;
+	display: flex;
+
+	
+	gap: 2rem;
+}
+
+main .tools .process .container h1{
+	
+	height: 5rem;
+	width: 5rem;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background:linear-gradient(to right, 
+	 var(--btn-hover1),
+	 var(--btn-color2));
+	color: var(--cards);
+}
+
+main .tools .process .container h2{
+	padding: 1rem;
+}
+
+main .tools .process .container p{
+	padding: 1rem;
+	color: var(--text-color);
+	font-size: 1.2rem;
+}
+
+main .tools .process .container h4{
+	color: var(--btn-color2);
+	font-size: 2.2rem;
+}
+
+footer{
+	background: var(--text-color);
+	padding: 2.2rem;
+	display: flex;
+	justify-content: space-around;
+}
+
+footer span{
+	height: 15rem;
+	width: 0.01rem;
+	background: var(--cards);
+}
+
+footer .foot1 h3{
+	padding: 1.1rem;
+  font-size: 1.1rem;
+  color: var(--btn-color1);
+}
+
+footer .foot1 h3 span{
+	color: var(--cards);
+	background: none;
+}
+
+footer .foot1 h1{
+	font-size: 2rem;
+	color: var(--cards);
+}
+
+footer .foot1 p {
+	color: var(--main-BG);
+	font-size: 1.2rem;
+	padding: 2.5rem;
+}
+
+footer .foot1 a{
+	text-decoration: none;
+	background:linear-gradient(to left, 
+	 var(--btn-color1),
+	 var(--btn-color2));
+	color:var(--cards);
+	padding: 1.3rem;
+	font-size: 1.4rem;
+	border-radius: 2rem;
+	text-decoration: none;
+	transition: 0.5s ease-in;
+}
+
+footer .foot1 a:hover{
+	font-size: 1.2rem;
+	background:linear-gradient(to top, 
+	 var(--btn-color1),
+	 var(--btn-color2));
+}
+
+footer .foot2 ul li{
+	list-style: none;
+	color: var(--cards);
+	font-size: 1.4rem;
+	padding: 0.6rem;
+}
+
+/*styling for responsive devices....*/
+
+@media(max-width: 470px){
+	header article{
+		justify-content: space-around;
+		align-items: center;
+		position: relative;
+	}
+
+header article nav{
+	position: absolute;
+	flex-direction: column;
+	justify-content: space-around;
+	top:5.4rem;
+	right: 0;
+	height: 100vh;
+	padding: 1.8rem;
+	background: var(--mild-black);
+  border-radius: 0.4rem;
+  transform: translateX(80px);
+  	  transition: opacity 1s ease, transform 1s;
+ opacity: 0;
+ z-index: -1;
+}
+
+header article nav.visible{
+	opacity: 1;
+ z-index: 1;
+ transform: translateX(0.1px);
+        transition: opacity 1s ease, transform 1s;
+}
+
+header article nav a{
+	color: var(--cards);
+}
+
+	header article .head-btn {
+  display: none;
+
+}
+
+header article .menu{
+	display: block;
+	font-size: 2.2rem;
+}
+
+main .hero{
+	padding-top: 6rem;
+	flex-direction: column;
+}
+
+main .hero .container .list{
+	flex-direction: column;
+}
+
+main .hero .image img{
+	display: none;
+}
+
+main .hero .container .buttons{
+	display: flex;
+	flex-direction: column;
+}
+
+
+main .lists{
+	flex-direction: column;
+	gap: 2rem;
+}
+
+
+/*main .lists img{
+	display: none;
+}
+
+main .lists .mobile{
+	display: block;
+	width: 20rem;
+	height: 20;
+	border-radius: 4rem;
+	box-shadow: 0 4px 20px rgba(31, 41, 55, 0.08);
+}
+
+*/
+
+main .lists span{
+	margin: 2rem;
+	width: 32rem;
+	height: 0.1rem;
+	background: var(--mild-black);
+}
+
+main .portfolio .top{
+	flex-direction: column;
+}
+
+main .portfolio .images > div{
+	place-self: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/*grid-template-columns: 1fr 1fr;
+	grid-template-rows:1fr 1fr;*/
+	flex-wrap: wrap;
+	/*justify-content: center;*/
+	gap: 5rem;
+	padding: 0.3rem;
+}
+
+main .portfolio .images figure{
+	padding:2.2rem;
+	background:white;
+	border-radius: 2rem;
+	width:36rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 4px 20px rgba(31, 41, 55, 0.08);
+}
+
+
+main .portfolio .images figure img{
+	width: 28rem;
+	height:20rem;
+	border-radius: 2rem;
+	box-shadow: 0 6px 16px rgba(31, 41, 55, 0.12);
+}
+
+
+main .tools{
+	flex-direction: column;
+}
+
+main .tools span{
+	margin: 2rem;
+	width: 23rem;
+	height: 0.01rem;
+	background: var(--mild-black);
+}
+
+main .tools .process{
+	margin-top: 9rem;
+	margin-bottom: 0rem;
+}
+
+main .tools .process .container{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr  ;
+	grid-template-rows: auto ;
+}
+
+main .tools .process .container .sec{
+	display: none;
+}
+
+main .tools .tool > div{
+	flex-wrap: wrap;
+}
+
+footer{
+	flex-direction: column;
+}
+
+footer span{
+	margin: 4rem;
+	width: 15rem;
+	height: 0.01rem;
+	background: var(--cards);
+}
+
+}
+
+/*responsive design for tablet devices....*/
+
+@media(min-width: 470.1px) and (max-width: 767px){
+	header article{
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	header article .menu{
+	display: none;
+}
+
+	header article .head-btn {
+  display: none;
+
+}
+
+main .hero{
+	padding-top: 13rem;
+	flex-direction: column;
+}
+
+main .hero .image img{
+	display: none;
+}
+
+main .hero .container .list{
+	margin-top: 4rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+}
+
+main .hero .container .list span{
+	display: none;
+}
+
+
+main .lists{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+	gap: 7rem;
+}
+
+main .lists img{
+	display: block;
+	width: 20rem;
+	height: 20;
+	border-radius: 4rem;
+}
+
+main .lists span{
+	display: none;
+}
+
+main .portfolio .top{
+	/*flex-direction: column;*/
+	place-self: center;
+}
+
+
+
+main .portfolio .images > div{
+	/*place-self: center;*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/*grid-template-columns: 1fr 1fr;
+	grid-template-rows:1fr 1fr;*/
+	flex-wrap: wrap;
+	/*justify-content: center;*/
+	gap: 5rem;
+	padding: 0.3rem;
+}
+
+main .portfolio .images figure{
+	padding:2.2rem;
+	background:white;
+	border-radius: 2rem;
+	width:30rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 4px 20px rgba(31, 41, 55, 0.08);
+}
+
+
+main .portfolio .images figure img{
+	width: 25rem;
+	height:17rem;
+	border-radius: 2rem;
+	box-shadow: 0 6px 16px rgba(31, 41, 55, 0.12);
+}
+
+
+
+main .tools{
+	flex-direction: column;
+	align-items: center;
+}
+
+main .tools span{
+	margin: 2rem;
+	width: 23rem;
+	height: 0.01rem;
+	background: var(--mild-black);
+}
+
+main .tools .process{
+	margin-top: 9rem;
+	margin-bottom: 0rem;
+}
+
+main .tools .process .container{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr  ;
+	grid-template-rows: 1fr 1fr 1fr  ;
+	gap: 2rem;
+}
+
+main .tools .process .container .sec{
+	display: none;
+}
+}
+
+/*responsive design for big screens....*/
+
+@media(min-width: 767.1px) and (max-width: 1200px){
+ header article .head-btn a{
+	padding: 1rem;
+	font-size: 1.1rem;
+}
+
+  header article .menu{
+	display: none;
+}
+
+main .hero{
+	padding-top: 8rem;
+}
+
+main .hero .container .list{
+	margin-top: 4rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+}
+
+main .hero .container .list span{
+	display: none;
+}
+
+main .hero .image img{
+	width: 30rem;
+	height:19rem;
+	border-radius: 3rem;
+}
+
+main .portfolio .images > div{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+main .portfolio .images figure{
+	padding:2.2rem;
+	background:white;
+	border-radius: 2rem;
+	width: 47rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 4px 20px rgba(31, 41, 55, 0.08);
+}
+
+/*main .portfolio .images figure h2{
+	color: var(--btn-color1);
+	text-align: center;
+	padding: 1rem;
+	font-size: 2.2rem ;
+}
+
+main .portfolio .images figure p {
+	color: var(--text-color);
+	text-align: center;
+	padding: 0.8rem;
+	font-size: 1.5rem;
+}
+*/
+main .portfolio .images figure img{
+	width: 42rem;
+	height:33rem;
+	border-radius: 2rem;
+	box-shadow: 0 6px 16px rgba(31, 41, 55, 0.12);
+}
+
+
+main .tools{
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+}
+
+main .tools span{
+	display: none;
+}
+}
